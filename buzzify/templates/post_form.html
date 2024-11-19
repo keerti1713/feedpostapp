@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}
+Buzzify
+{% endblock title %}
+
+{% block content %}
+<h2 class="text-center mt-4">
+    {%if form.instance.pk %} 
+    Edit Post
+    {% else %}
+    Create Post
+    {% endif %}
+</h2>
+
+<h3> {%if form.instance.pk %} 
+    Edit Post 
+    {% else %} 
+    <h4 class="font-weight-bold ">Add Post</h4> 
+    {% endif %}
+    <form method="post" enctype="multipart/form-data"
+    class="form">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button class="btn btn-primary " type="submit">Post</button>
+</form><br>
+<a class="text-secondary text-decoration-none" href="{% url 'post_list' %}">Back to Posts</a>
+</h3>
+{% endblock content %}

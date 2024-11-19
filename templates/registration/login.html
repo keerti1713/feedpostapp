@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}
+Buzzify
+{% endblock title %}
+
+{% block content %}
+<h2 class="font-weight-bold ext-center">Login Form</h2>
+<form method="post" >
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button class="btn btn-primary " type="submit">Login</button>
+</form><br>
+<p>Account does not exist. <a href="{% url 'register'%}">Register here.</a></p>
+{% endblock content %}

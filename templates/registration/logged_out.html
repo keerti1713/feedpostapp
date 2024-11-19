@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block title %}
+Buzzify
+{% endblock title %}
+
+{% block content %}
+<h2 class="font-weight-bold ext-center">Logged out</h2>
+<br>
+<p>You have been logged out.<br>
+<a href="{% url 'login'%}">Login here</a></p>
+{% endblock content %}
